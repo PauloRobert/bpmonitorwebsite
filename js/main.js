@@ -1,5 +1,5 @@
 (() => {
-  const mockupFallback = "imagens/smartphone.jpg";
+  const mockupFallback = "imagens/smartphone.webp";
 
   const initAOS = () => {
     if (window.AOS) {
@@ -319,10 +319,13 @@
     });
   };
 
+  // Expose particles init so the deferred CDN loader (in index.html) can call it
+  window.__initParticles = initParticles;
+
   const init = () => {
     initSmoothAnchors();
     initAOS();
-    initParticles();
+    // particles is lazy-loaded on idle via <script> in index.html — it self-inits
     initSwipers();
     initNavbar();
     initRipple();
