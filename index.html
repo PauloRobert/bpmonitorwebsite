@@ -412,9 +412,9 @@
   <script src="js/main.js"></script>
   <script>
     // TypeIt.js - Máquina de escrever com frases aleatórias
-    document.addEventListener('DOMContentLoaded', () => {
+    function initTypewriter() {
       const typewriterElement = document.getElementById('typewriter-badge');
-      if (!typewriterElement || !window.TypeIt) return;
+      if (!typewriterElement) return;
 
       const phrases = [
         'Tecnologia cardiovascular para sua rotina',
@@ -430,28 +430,41 @@
       ];
 
       let currentPhraseIndex = 0;
-      let typeItInstance = null;
 
-      function startTypeIt() {
+      function typePhrase() {
         const phrase = phrases[currentPhraseIndex];
         typewriterElement.innerHTML = '';
+        
+        let charIndex = 0;
+        const speed = 50; // milissegundos entre cada caractere
 
-        typeItInstance = new TypeIt(typewriterElement, {
-          strings: phrase,
-          speed: 50,
-          waitUntilVisible: true,
-          afterComplete: () => {
+        function typeChar() {
+          if (charIndex < phrase.length) {
+            typewriterElement.textContent += phrase[charIndex];
+            charIndex++;
+            setTimeout(typeChar, speed);
+          } else {
+            // Após terminar de digitar, aguarda 3 segundos antes da próxima frase
             setTimeout(() => {
               currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
-              startTypeIt();
-            }, 3000); // Aguarda 3 segundos antes da próxima frase
+              typePhrase();
+            }, 3000);
           }
-        }).go();
+        }
+
+        typeChar();
       }
 
       // Inicia a animação de typewriter
-      startTypeIt();
-    });
+      typePhrase();
+    }
+
+    // Aguarda o DOM estar completo
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initTypewriter);
+    } else {
+      initTypewriter();
+    }
   </script>
 </body>
 </html>
