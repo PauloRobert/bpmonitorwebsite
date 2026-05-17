@@ -23,6 +23,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@typeit/core@0/dist/index.umd.js"></script>
 </head>
 <body>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
   <div id="particles-js" class="particles-layer" aria-hidden="true"></div>
   <div class="ambient ambient-one"></div>
   <div class="ambient ambient-two"></div>
@@ -219,75 +220,128 @@
       </div>
     </section>
 
-    <section id="app" class="section-shell app-showcase-section overflow-hidden">
-      <div class="container position-relative">
+    <section id="app" class="section-shell gallery-section overflow-hidden">
+      <div class="container">
         <div class="section-heading text-center mx-auto" data-aos="fade-up">
           <span class="section-kicker">Visual do app</span>
-          <h2>Um ecossistema visual criado para impressionar e simplificar o cuidado diário</h2>
-          <p>Composição premium com profundidade, reflexos e destaque total para a experiência do aplicativo.</p>
+          <h2>Design que inspira confiança</h2>
+          <p>Cada pixel foi pensado para entregar uma experiência premium na palma da sua mão.</p>
         </div>
 
-        <div class="showcase-layout mt-5">
-          <div class="showcase-copy glass-card" data-aos="fade-up-right">
-            <span class="mini-label">Design orientado à ação</span>
-            <h3>Dashboard imersivo, leitura rápida e feedbacks visuais inteligentes.</h3>
-            <p>O BP Monitor une clareza clínica com linguagem de produto premium para aumentar confiança e frequência de uso.</p>
-            <ul class="showcase-list list-unstyled mb-0">
-              <li><i class="bi bi-check2-circle"></i> Indicadores com leitura instantânea</li>
-              <li><i class="bi bi-check2-circle"></i> Insights em blocos visuais de alta legibilidade</li>
-              <li><i class="bi bi-check2-circle"></i> Fluxo pensado para pacientes e profissionais</li>
-            </ul>
-          </div>
+        <!-- Counter -->
+        <div class="gallery-counter" data-aos="fade-up" data-aos-delay="50">
+          <span class="counter-current">01</span>
+          <span class="counter-sep">/</span>
+          <span class="counter-total">08</span>
+        </div>
 
-          <div class="showcase-phone-wrap" id="showcaseParallax">
-            <div class="showcase-light"></div>
-            <div class="showcase-phone floating-device">
-              <img
-                src="imagens/smartphone.jpg"
-                alt="Aplicativo BP Monitor exibido em smartphone"
-                class="showcase-phone-image"
-                loading="lazy"
-              >
-            </div>
+        <!-- Info panel -->
+        <div class="gallery-info-panel" data-aos="fade-up" data-aos-delay="80">
+          <h3 class="gallery-info-title">Bem-vindo</h3>
+          <p class="gallery-info-desc">Primeira impressão que transmite confiança</p>
+        </div>
+      </div>
 
-            <figure class="floating-shot floating-shot-left glass-card" data-speed="0.8">
-              <img src="imagens/smartphone.jpg" alt="Tela simulada do dashboard do aplicativo" loading="lazy">
-            </figure>
-            <figure class="floating-shot floating-shot-top glass-card" data-speed="1.1">
-              <img src="imagens/smartphone.jpg" alt="Tela simulada do histórico do aplicativo" loading="lazy">
-            </figure>
-            <figure class="floating-shot floating-shot-right glass-card" data-speed="0.95">
-              <img src="imagens/smartphone.jpg" alt="Tela simulada de relatórios do aplicativo" loading="lazy">
-            </figure>
-          </div>
-
-          <div class="showcase-slider glass-card" data-aos="fade-up-left">
-            <div class="swiper appSwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <article class="slide-panel">
-                    <span class="mini-label">Tela 01</span>
-                    <h3>Dashboard dinâmico</h3>
-                    <p>Resumo com métricas centrais, tendências e status da pressão em um só lugar.</p>
-                  </article>
+      <!-- Full-width coverflow carousel -->
+      <div class="gallery-coverflow-wrap" data-aos="fade-up" data-aos-delay="120">
+        <div class="gallery-ambient-glow"></div>
+        <div class="swiper galleryCoverflow">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" data-title="Bem-vindo" data-desc="Primeira impressão que transmite confiança">
+              <div class="gallery-phone">
+                <div class="phone-frame">
+                  <div class="phone-notch"></div>
+                  <div class="phone-screen">
+                    <img src="imagens/imagens_reais/01_onboarding_welcome.png" alt="Bem-vindo ao BP Monitor">
+                  </div>
                 </div>
-                <div class="swiper-slide">
-                  <article class="slide-panel">
-                    <span class="mini-label">Tela 02</span>
-                    <h3>Histórico visual</h3>
-                    <p>Consulte medições anteriores com filtros, contexto e leitura facilitada.</p>
-                  </article>
-                </div>
-                <div class="swiper-slide">
-                  <article class="slide-panel">
-                    <span class="mini-label">Tela 03</span>
-                    <h3>Relatórios compartilháveis</h3>
-                    <p>Organize seus dados em formatos claros para acompanhamento médico.</p>
-                  </article>
-                </div>
+                <div class="phone-reflection"></div>
               </div>
-              <div class="swiper-pagination"></div>
             </div>
+            <div class="swiper-slide" data-title="Perfil de Saúde" data-desc="Personalize cada detalhe do seu cuidado">
+              <div class="gallery-phone">
+                <div class="phone-frame">
+                  <div class="phone-notch"></div>
+                  <div class="phone-screen">
+                    <img src="imagens/imagens_reais/02_onboarding_health.png" alt="Configure sua Saúde">
+                  </div>
+                </div>
+                <div class="phone-reflection"></div>
+              </div>
+            </div>
+            <div class="swiper-slide" data-title="Relatórios" data-desc="Visualize dados com clareza e elegância">
+              <div class="gallery-phone">
+                <div class="phone-frame">
+                  <div class="phone-notch"></div>
+                  <div class="phone-screen">
+                    <img src="imagens/imagens_reais/03_onboarding_reports.png" alt="Relatórios">
+                  </div>
+                </div>
+                <div class="phone-reflection"></div>
+              </div>
+            </div>
+            <div class="swiper-slide" data-title="Dashboard" data-desc="Central de controle intuitiva e moderna">
+              <div class="gallery-phone">
+                <div class="phone-frame">
+                  <div class="phone-notch"></div>
+                  <div class="phone-screen">
+                    <img src="imagens/imagens_reais/04_home_screen.png" alt="Dashboard">
+                  </div>
+                </div>
+                <div class="phone-reflection"></div>
+              </div>
+            </div>
+            <div class="swiper-slide" data-title="Histórico" data-desc="Todas suas medições organizadas por data">
+              <div class="gallery-phone">
+                <div class="phone-frame">
+                  <div class="phone-notch"></div>
+                  <div class="phone-screen">
+                    <img src="imagens/imagens_reais/05_history_screen.png" alt="Histórico">
+                  </div>
+                </div>
+                <div class="phone-reflection"></div>
+              </div>
+            </div>
+            <div class="swiper-slide" data-title="Análise" data-desc="Insights profundos sobre sua saúde">
+              <div class="gallery-phone">
+                <div class="phone-frame">
+                  <div class="phone-notch"></div>
+                  <div class="phone-screen">
+                    <img src="imagens/imagens_reais/06_reports_screen.png" alt="Análise de Dados">
+                  </div>
+                </div>
+                <div class="phone-reflection"></div>
+              </div>
+            </div>
+            <div class="swiper-slide" data-title="Registrar" data-desc="Adicione uma nova medição em segundos">
+              <div class="gallery-phone">
+                <div class="phone-frame">
+                  <div class="phone-notch"></div>
+                  <div class="phone-screen">
+                    <img src="imagens/imagens_reais/07_add_measurement.png" alt="Registrar Medição">
+                  </div>
+                </div>
+                <div class="phone-reflection"></div>
+              </div>
+            </div>
+            <div class="swiper-slide" data-title="Perfil" data-desc="Seu espaço personalizado e seguro">
+              <div class="gallery-phone">
+                <div class="phone-frame">
+                  <div class="phone-notch"></div>
+                  <div class="phone-screen">
+                    <img src="imagens/imagens_reais/08_profile_screen.png" alt="Perfil do Usuário">
+                  </div>
+                </div>
+                <div class="phone-reflection"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Progress bar -->
+        <div class="gallery-progress">
+          <div class="progress-track">
+            <div class="progress-fill"></div>
           </div>
         </div>
       </div>

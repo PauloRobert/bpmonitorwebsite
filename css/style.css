@@ -841,6 +841,248 @@ header {
   color: #ffd66b;
 }
 
+/* ═══════════════════════════════════════════
+   PREMIUM GALLERY — 3D COVERFLOW
+   ═══════════════════════════════════════════ */
+
+.gallery-section {
+  padding-bottom: 100px;
+  position: relative;
+}
+
+/* Counter — top right */
+.gallery-counter {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-family: "Space Grotesk", sans-serif;
+  letter-spacing: 0.08em;
+}
+
+.counter-current {
+  font-size: 2.6rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.counter-sep {
+  font-size: 1.4rem;
+  color: var(--text-muted);
+  margin: 0 0.4rem;
+  font-weight: 300;
+}
+
+.counter-total {
+  font-size: 1.4rem;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+/* Info panel */
+.gallery-info-panel {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  min-height: 60px;
+}
+
+.gallery-info-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 0.3rem 0;
+  transition: all 0.5s ease;
+  letter-spacing: -0.02em;
+}
+
+.gallery-info-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin: 0;
+  transition: all 0.5s ease;
+}
+
+/* Coverflow wrapper */
+.gallery-coverflow-wrap {
+  position: relative;
+  width: 100%;
+  padding: 2rem 0 3rem;
+}
+
+/* Ambient glow behind center phone */
+.gallery-ambient-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  width: 320px;
+  height: 500px;
+  background: radial-gradient(ellipse, rgba(0, 209, 255, 0.18) 0%, rgba(123, 46, 255, 0.12) 40%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+  animation: glowPulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes glowPulse {
+  0% { opacity: 0.7; transform: translate(-50%, -55%) scale(1); }
+  100% { opacity: 1; transform: translate(-50%, -55%) scale(1.1); }
+}
+
+/* Swiper container */
+.swiper.galleryCoverflow {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  overflow: visible !important;
+  padding: 40px 0 60px;
+}
+
+.galleryCoverflow .swiper-wrapper {
+  align-items: center;
+}
+
+.galleryCoverflow .swiper-slide {
+  width: 260px;
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  filter: blur(2px) brightness(0.5);
+  opacity: 0.5;
+  transform: scale(0.78);
+}
+
+.galleryCoverflow .swiper-slide-active {
+  filter: blur(0) brightness(1);
+  opacity: 1;
+  transform: scale(1);
+  z-index: 10;
+}
+
+.galleryCoverflow .swiper-slide-prev,
+.galleryCoverflow .swiper-slide-next {
+  filter: blur(1px) brightness(0.7);
+  opacity: 0.7;
+  transform: scale(0.88);
+}
+
+/* Phone mockup frame */
+.gallery-phone {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.phone-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 19.2;
+  background: linear-gradient(145deg, #1a1f2e, #0d1117, #1a1f2e);
+  border-radius: 36px;
+  padding: 6px;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 30px 80px rgba(0, 0, 0, 0.5),
+    0 0 60px rgba(0, 209, 255, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  transition: box-shadow 0.6s ease;
+}
+
+.swiper-slide-active .phone-frame {
+  box-shadow:
+    0 0 0 1px rgba(0, 209, 255, 0.2),
+    0 40px 100px rgba(0, 0, 0, 0.6),
+    0 0 80px rgba(0, 209, 255, 0.15),
+    0 0 120px rgba(123, 46, 255, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.phone-notch {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 22px;
+  background: #0a0e16;
+  border-radius: 0 0 16px 16px;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.phone-notch::after {
+  content: '';
+  position: absolute;
+  top: 7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle, #1a2a3a, #0d1117);
+  border-radius: 50%;
+  box-shadow: inset 0 0 3px rgba(0, 209, 255, 0.3);
+}
+
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  overflow: hidden;
+  position: relative;
+  background: #0a0e16;
+}
+
+.phone-screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* Reflection under phone */
+.phone-reflection {
+  width: 80%;
+  height: 40px;
+  margin: 0 auto;
+  background: linear-gradient(180deg, rgba(0, 209, 255, 0.12), transparent);
+  filter: blur(20px);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  margin-top: -5px;
+}
+
+.swiper-slide-active .phone-reflection {
+  opacity: 1;
+}
+
+/* Progress bar */
+.gallery-progress {
+  max-width: 280px;
+  margin: 0 auto;
+  padding-top: 1.5rem;
+}
+
+.progress-track {
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 12.5%;
+  background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+  border-radius: 10px;
+  transition: width 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 0 12px rgba(0, 209, 255, 0.5);
+}
+
 .final-cta-section {
   padding-bottom: 140px;
 }
@@ -1072,6 +1314,15 @@ header {
   .floating-shot-right {
     right: 6%;
   }
+
+  .galleryCoverflow .swiper-slide {
+    width: 220px;
+  }
+
+  .gallery-ambient-glow {
+    width: 260px;
+    height: 420px;
+  }
 }
 
 @media (max-width: 991.98px) {
@@ -1207,6 +1458,38 @@ header {
   .final-cta-card {
     text-align: left;
   }
+
+  .galleryCoverflow .swiper-slide {
+    width: 200px;
+  }
+
+  .phone-frame {
+    border-radius: 28px;
+    padding: 5px;
+  }
+
+  .phone-screen {
+    border-radius: 24px;
+  }
+
+  .phone-notch {
+    width: 70px;
+    height: 18px;
+    top: 5px;
+  }
+
+  .counter-current {
+    font-size: 2rem;
+  }
+
+  .gallery-info-title {
+    font-size: 1.3rem;
+  }
+
+  .gallery-ambient-glow {
+    width: 200px;
+    height: 360px;
+  }
 }
 
 @media (max-width: 575.98px) {
@@ -1236,6 +1519,61 @@ header {
   .final-cta-card {
     border-radius: 24px;
   }
+
+  .galleryCoverflow .swiper-slide {
+    width: 170px;
+  }
+
+  .swiper.galleryCoverflow {
+    padding: 20px 0 40px;
+  }
+
+  .phone-frame {
+    border-radius: 24px;
+    padding: 4px;
+  }
+
+  .phone-screen {
+    border-radius: 20px;
+  }
+
+  .phone-notch {
+    width: 60px;
+    height: 15px;
+    top: 4px;
+    border-radius: 0 0 12px 12px;
+  }
+
+  .phone-notch::after {
+    width: 6px;
+    height: 6px;
+    top: 5px;
+  }
+
+  .counter-current {
+    font-size: 1.8rem;
+  }
+
+  .counter-sep, .counter-total {
+    font-size: 1.1rem;
+  }
+
+  .gallery-info-title {
+    font-size: 1.15rem;
+  }
+
+  .gallery-info-desc {
+    font-size: 0.85rem;
+  }
+
+  .gallery-ambient-glow {
+    width: 160px;
+    height: 300px;
+  }
+
+  .gallery-progress {
+    max-width: 200px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1246,5 +1584,209 @@ header {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PREMIUM POLISH LAYER — Apple/Google-grade refinements
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Scroll progress bar (Apple-style top indicator) */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple), var(--neon-green));
+  z-index: 2000;
+  pointer-events: none;
+  transition: width 0.1s linear;
+  box-shadow: 0 0 8px rgba(0, 209, 255, 0.5);
+}
+
+/* Refined focus states for accessibility */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.nav-link:focus-visible,
+.thumbnail-item:focus-visible {
+  outline: 2px solid var(--neon-blue);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+.btn:focus-visible {
+  outline-offset: 4px;
+  border-radius: 999px;
+}
+
+/* Navbar refinement — cleaner spacing */
+.navbar-tech {
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+}
+
+.navbar-tech .container {
+  max-width: 1280px;
+}
+
+.navbar-nav {
+  gap: 0.25rem;
+}
+
+.navbar-nav .nav-link {
+  font-size: 0.95rem;
+  padding: 0.6rem 0.9rem;
+  white-space: nowrap;
+}
+
+.btn-nav {
+  padding: 0.55rem 1.4rem;
+  font-size: 0.9rem;
+  min-width: 130px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Hero typography — Apple-style hierarchy */
+.hero-title {
+  font-size: clamp(2.4rem, 5.5vw, 4.5rem);
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  font-weight: 700;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+  line-height: 1.55;
+  color: var(--text-secondary);
+  max-width: 32em;
+}
+
+.section-heading h2 {
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+}
+
+/* Cleaner ambient & particles — reduce visual noise */
+.particles-layer {
+  opacity: 0.4;
+}
+
+.ambient {
+  opacity: 0.28;
+}
+
+/* Refined glass cards */
+.glass-card {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+}
+
+/* Feature cards — softer hover */
+.feature-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0, 209, 255, 0.25);
+}
+
+/* Buttons — Apple-grade easing */
+.btn {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, background 0.35s ease, color 0.35s ease;
+  letter-spacing: -0.005em;
+}
+
+.btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Selection */
+::selection {
+  background: rgba(0, 209, 255, 0.3);
+  color: var(--text-primary);
+}
+
+/* Scrollbar polish */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(7, 11, 20, 0.6);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--neon-blue), var(--neon-purple));
+  border-radius: 10px;
+  border: 2px solid rgba(7, 11, 20, 0.6);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--neon-purple), var(--neon-blue));
+}
+
+/* Section heading spacing */
+.section-heading {
+  max-width: 760px;
+}
+
+.section-heading p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* Hero — better breathing room */
+.hero-section {
+  min-height: 100vh;
+}
+
+.hero-cta {
+  margin-top: 2.2rem;
+}
+
+.hero-metrics {
+  margin-top: 3rem !important;
+  opacity: 0.92;
+}
+
+.metric-card {
+  padding: 1.1rem 1.2rem;
+  text-align: left;
+}
+
+.metric-card strong {
+  font-size: 1.5rem;
+  background: linear-gradient(135deg, var(--text-primary), rgba(0, 209, 255, 0.9));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.metric-card span {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Mobile navbar fix — ensure Baixar App button visible */
+@media (max-width: 991.98px) {
+  .navbar-nav {
+    align-items: stretch !important;
+  }
+  .btn-nav {
+    min-width: 100%;
+    margin-top: 0.5rem;
+  }
+}
+
+/* Hide visual clutter on small screens */
+@media (max-width: 575.98px) {
+  .ambient {
+    display: none;
+  }
+  .particles-layer {
+    opacity: 0.25;
   }
 }

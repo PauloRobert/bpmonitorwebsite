@@ -98,11 +98,70 @@
         }
       }
     });
+
+    // Gallery Premium — 3D Coverflow
+    const counterCurrent = document.querySelector(".counter-current");
+    const infoTitle = document.querySelector(".gallery-info-title");
+    const infoDesc = document.querySelector(".gallery-info-desc");
+    const progressFill = document.querySelector(".progress-fill");
+    const totalSlides = 8;
+
+    const galleryCoverflow = new Swiper(".galleryCoverflow", {
+      effect: "coverflow",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      loop: true,
+      speed: 700,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true
+      },
+      coverflowEffect: {
+        rotate: 0,
+        stretch: 60,
+        depth: 200,
+        modifier: 1.5,
+        slideShadows: false
+      },
+      on: {
+        slideChange: function () {
+          const idx = this.realIndex;
+          const slide = this.slides[this.activeIndex];
+          if (counterCurrent) {
+            counterCurrent.textContent = String(idx + 1).padStart(2, "0");
+          }
+          if (slide && infoTitle && infoDesc) {
+            const title = slide.getAttribute("data-title") || "";
+            const desc = slide.getAttribute("data-desc") || "";
+            infoTitle.style.opacity = "0";
+            infoTitle.style.transform = "translateY(8px)";
+            infoDesc.style.opacity = "0";
+            infoDesc.style.transform = "translateY(8px)";
+            requestAnimationFrame(() => {
+              requestAnimationFrame(() => {
+                infoTitle.textContent = title;
+                infoDesc.textContent = desc;
+                infoTitle.style.opacity = "1";
+                infoTitle.style.transform = "translateY(0)";
+                infoDesc.style.opacity = "1";
+                infoDesc.style.transform = "translateY(0)";
+              });
+            });
+          }
+          if (progressFill) {
+            progressFill.style.width = ((idx + 1) / totalSlides * 100) + "%";
+          }
+        }
+      }
+    });
   };
 
   const initNavbar = () => {
     const nav = document.getElementById("mainNav");
     const collapseElement = document.getElementById("navbarContent");
+    const progress = document.getElementById("scrollProgress");
 
     if (!nav) {
       return;
@@ -110,6 +169,11 @@
 
     const updateNav = () => {
       nav.classList.toggle("scrolled", window.scrollY > 24);
+      if (progress) {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        const pct = max > 0 ? (window.scrollY / max) * 100 : 0;
+        progress.style.width = pct + "%";
+      }
     };
 
     updateNav();
@@ -212,13 +276,7 @@
 
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.from(".hero-title, .hero-subtitle, .hero-cta", {
-      y: 40,
-      opacity: 0,
-      duration: 1,
-      stagger: 0.16,
-      ease: "power3.out"
-    });
+    // Hero entrance handled by AOS (data-aos attributes) to avoid conflicts.
 
     gsap.utils.toArray(".feature-card").forEach((card, index) => {
       gsap.from(card, {
