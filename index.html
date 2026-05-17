@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BP Monitor | Controle sua pressão arterial com inteligência</title>
+  <meta name="description" content="Monitore sua pressão arterial em tempo real com o BP Monitor. Histórico inteligente, alertas, relatórios e uma experiência premium para cuidar da sua saúde cardiovascular.">
+  <meta name="keywords" content="BP Monitor, pressão arterial, aplicativo de saúde, monitoramento cardiovascular, app saúde, relatórios médicos">
+  <meta name="theme-color" content="#070B14">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="BP Monitor | Controle sua pressão arterial com inteligência">
+  <meta property="og:description" content="O aplicativo BP Monitor ajuda você a monitorar, registrar e acompanhar sua saúde cardiovascular em tempo real.">
+  <meta property="og:image" content="imagens/mockup-smartphone.png">
+  <meta property="og:locale" content="pt_BR">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@typeit/core@0/dist/index.umd.js"></script>
+</head>
+<body>
+  <div id="particles-js" class="particles-layer" aria-hidden="true"></div>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <header style="position: relative; z-index: 1040;">
+    <nav id="mainNav" class="navbar navbar-expand-lg fixed-top navbar-tech" style="z-index: 1040;">
+      <div class="container">
+        <a class="navbar-brand brand-mark" href="#hero" aria-label="BP Monitor - início" style="cursor: pointer; z-index: 1040;">
+          <span class="brand-logo"><i class="bi bi-heart-pulse-fill"></i></span>
+          <span>BP Monitor</span>
+        </a>
+        <button class="navbar-toggler nav-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Abrir navegação" style="z-index: 1040;">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent" style="z-index: 1040;">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+            <li class="nav-item"><a class="nav-link smooth-anchor" href="#beneficios" style="cursor: pointer;">Benefícios</a></li>
+            <li class="nav-item"><a class="nav-link smooth-anchor" href="#como-funciona" style="cursor: pointer;">Como funciona</a></li>
+            <li class="nav-item"><a class="nav-link smooth-anchor" href="#app" style="cursor: pointer;">Visual do app</a></li>
+            <li class="nav-item"><a class="nav-link smooth-anchor" href="#depoimentos" style="cursor: pointer;">Depoimentos</a></li>
+            <li class="nav-item ms-lg-3"><a class="btn btn-sm btn-nav btn-primary-tech ripple smooth-anchor" href="#cta-final" style="cursor: pointer;">Baixar App</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero" class="hero-section section-shell overflow-hidden">
+      <div class="container position-relative">
+        <div class="row align-items-center min-vh-100 py-5 gy-5">
+          <div class="col-lg-6 pt-5 pt-lg-0">
+            <div class="section-badge" data-aos="fade-up">
+              <span class="badge-dot"></span>
+              <span id="typewriter-badge">Tecnologia cardiovascular para sua rotina</span>
+            </div>
+            <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">Controle sua pressão arterial com inteligência</h1>
+            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="180">O BP Monitor ajuda você a monitorar, registrar e acompanhar sua saúde cardiovascular em tempo real.</p>
+            <div class="hero-cta d-flex flex-wrap gap-3" data-aos="fade-up" data-aos-delay="260">
+              <a href="#cta-final" class="btn btn-primary-tech btn-lg ripple">Baixar App</a>
+              <a href="#beneficios" class="btn btn-outline-tech btn-lg ripple">Saiba Mais</a>
+            </div>
+            <div class="hero-metrics row g-3 mt-4" data-aos="fade-up" data-aos-delay="340">
+              <div class="col-6 col-sm-4">
+                <article class="metric-card glass-card">
+                  <strong>24/7</strong>
+                  <span>Acompanhamento contínuo</span>
+                </article>
+              </div>
+              <div class="col-6 col-sm-4">
+                <article class="metric-card glass-card">
+                  <strong>+98%</strong>
+                  <span>Clareza nos registros</span>
+                </article>
+              </div>
+              <div class="col-12 col-sm-4">
+                <article class="metric-card glass-card">
+                  <strong>LGPD</strong>
+                  <span>Proteção de dados sensíveis</span>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="hero-visual-container" data-aos="zoom-in" data-aos-delay="120">
+              <div class="orb orb-a"></div>
+              <div class="orb orb-b"></div>
+              <div class="orb orb-c"></div>
+
+              <div class="phone-3d-wrapper">
+                <div class="phone-3d-stage">
+                  <div class="phone-screen-content">
+                    <div class="content-stream">
+                      <img src="imagens/imagens_reais/01_onboarding_welcome.png" alt="Tela de boas-vindas" class="screen-slide">
+                      <img src="imagens/imagens_reais/02_onboarding_health.png" alt="Tela de saúde" class="screen-slide">
+                      <img src="imagens/imagens_reais/04_home_screen.png" alt="Tela inicial" class="screen-slide">
+                      <img src="imagens/imagens_reais/05_history_screen.png" alt="Histórico" class="screen-slide">
+                      <img src="imagens/imagens_reais/06_reports_screen.png" alt="Relatórios" class="screen-slide">
+                      <img src="imagens/imagens_reais/07_add_measurement.png" alt="Adicionar medição" class="screen-slide">
+                    </div>
+                  </div>
+                  <div class="phone-frame-3d">
+                    <div class="phone-notch"></div>
+                    <div class="phone-home-button"></div>
+                  </div>
+                </div>
+              </div>
+
+              <article class="floating-info floating-info-left glass-card" data-speed="0.85">
+                <span class="info-label">Leitura média</span>
+                <strong>118/79</strong>
+                <small>Indicadores equilibrados</small>
+              </article>
+
+              <article class="floating-info floating-info-right glass-card" data-speed="1.15">
+                <span class="info-label">Alerta inteligente</span>
+                <strong>Variação detectada</strong>
+                <small>Receba ações recomendadas</small>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="beneficios" class="section-shell benefits-section">
+      <div class="container">
+        <div class="section-heading text-center mx-auto" data-aos="fade-up">
+          <span class="section-kicker">Benefícios</span>
+          <h2>Uma plataforma pensada para transformar dados em decisões seguras</h2>
+          <p>Recursos projetados para criar confiança, recorrência e visibilidade total da sua saúde cardiovascular.</p>
+        </div>
+
+        <div class="row g-4 mt-2">
+          <div class="col-md-6 col-xl-4" data-aos="fade-up">
+            <article class="feature-card glass-card h-100">
+              <div class="icon-shell"><i class="bi bi-broadcast"></i></div>
+              <h3>Monitoramento em tempo real</h3>
+              <p>Visualize sua evolução imediatamente com leituras organizadas, claras e sempre acessíveis.</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="80">
+            <article class="feature-card glass-card h-100">
+              <div class="icon-shell"><i class="bi bi-clock-history"></i></div>
+              <h3>Histórico completo</h3>
+              <p>Tenha todos os registros em uma linha do tempo inteligente para identificar padrões e tendências.</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="160">
+            <article class="feature-card glass-card h-100">
+              <div class="icon-shell"><i class="bi bi-bell"></i></div>
+              <h3>Alertas inteligentes</h3>
+              <p>Receba notificações estratégicas quando as medições exigirem atenção ou acompanhamento.</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-4" data-aos="fade-up">
+            <article class="feature-card glass-card h-100">
+              <div class="icon-shell"><i class="bi bi-grid-1x2"></i></div>
+              <h3>Interface intuitiva</h3>
+              <p>Navegação leve, moderna e pensada para facilitar o uso em qualquer momento do dia.</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="80">
+            <article class="feature-card glass-card h-100">
+              <div class="icon-shell"><i class="bi bi-file-earmark-bar-graph"></i></div>
+              <h3>Relatórios detalhados</h3>
+              <p>Gere insights visuais prontos para compartilhar com profissionais de saúde com rapidez.</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="160">
+            <article class="feature-card glass-card h-100">
+              <div class="icon-shell"><i class="bi bi-shield-lock"></i></div>
+              <h3>Segurança dos dados</h3>
+              <p>Camadas de proteção e privacidade para garantir confiança total no armazenamento das medições.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="como-funciona" class="section-shell timeline-section">
+      <div class="container">
+        <div class="section-heading text-center mx-auto" data-aos="fade-up">
+          <span class="section-kicker">Como funciona</span>
+          <h2>Três passos para cuidar melhor da sua rotina cardiovascular</h2>
+          <p>Uma jornada simples, visual e fluida para transformar acompanhamento em hábito saudável.</p>
+        </div>
+
+        <div class="timeline-wrap mt-5">
+          <div class="timeline-line"></div>
+          <article class="timeline-item glass-card" data-aos="fade-right">
+            <span class="timeline-step">01</span>
+            <div>
+              <h3>Registre suas medições</h3>
+              <p>Adicione valores com rapidez, personalize horários e crie uma base confiável para acompanhar sua saúde.</p>
+            </div>
+          </article>
+          <article class="timeline-item timeline-item-alt glass-card" data-aos="fade-left">
+            <span class="timeline-step">02</span>
+            <div>
+              <h3>Acompanhe seus indicadores</h3>
+              <p>Veja gráficos, padrões e comparativos em uma interface elegante que facilita interpretação instantânea.</p>
+            </div>
+          </article>
+          <article class="timeline-item glass-card" data-aos="fade-right">
+            <span class="timeline-step">03</span>
+            <div>
+              <h3>Compartilhe relatórios com médicos</h3>
+              <p>Envie resumos visuais completos para consultas mais assertivas, rápidas e orientadas por dados reais.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="app" class="section-shell app-showcase-section overflow-hidden">
+      <div class="container position-relative">
+        <div class="section-heading text-center mx-auto" data-aos="fade-up">
+          <span class="section-kicker">Visual do app</span>
+          <h2>Um ecossistema visual criado para impressionar e simplificar o cuidado diário</h2>
+          <p>Composição premium com profundidade, reflexos e destaque total para a experiência do aplicativo.</p>
+        </div>
+
+        <div class="showcase-layout mt-5">
+          <div class="showcase-copy glass-card" data-aos="fade-up-right">
+            <span class="mini-label">Design orientado à ação</span>
+            <h3>Dashboard imersivo, leitura rápida e feedbacks visuais inteligentes.</h3>
+            <p>O BP Monitor une clareza clínica com linguagem de produto premium para aumentar confiança e frequência de uso.</p>
+            <ul class="showcase-list list-unstyled mb-0">
+              <li><i class="bi bi-check2-circle"></i> Indicadores com leitura instantânea</li>
+              <li><i class="bi bi-check2-circle"></i> Insights em blocos visuais de alta legibilidade</li>
+              <li><i class="bi bi-check2-circle"></i> Fluxo pensado para pacientes e profissionais</li>
+            </ul>
+          </div>
+
+          <div class="showcase-phone-wrap" id="showcaseParallax">
+            <div class="showcase-light"></div>
+            <div class="showcase-phone floating-device">
+              <img
+                src="imagens/smartphone.jpg"
+                alt="Aplicativo BP Monitor exibido em smartphone"
+                class="showcase-phone-image"
+                loading="lazy"
+              >
+            </div>
+
+            <figure class="floating-shot floating-shot-left glass-card" data-speed="0.8">
+              <img src="imagens/smartphone.jpg" alt="Tela simulada do dashboard do aplicativo" loading="lazy">
+            </figure>
+            <figure class="floating-shot floating-shot-top glass-card" data-speed="1.1">
+              <img src="imagens/smartphone.jpg" alt="Tela simulada do histórico do aplicativo" loading="lazy">
+            </figure>
+            <figure class="floating-shot floating-shot-right glass-card" data-speed="0.95">
+              <img src="imagens/smartphone.jpg" alt="Tela simulada de relatórios do aplicativo" loading="lazy">
+            </figure>
+          </div>
+
+          <div class="showcase-slider glass-card" data-aos="fade-up-left">
+            <div class="swiper appSwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <article class="slide-panel">
+                    <span class="mini-label">Tela 01</span>
+                    <h3>Dashboard dinâmico</h3>
+                    <p>Resumo com métricas centrais, tendências e status da pressão em um só lugar.</p>
+                  </article>
+                </div>
+                <div class="swiper-slide">
+                  <article class="slide-panel">
+                    <span class="mini-label">Tela 02</span>
+                    <h3>Histórico visual</h3>
+                    <p>Consulte medições anteriores com filtros, contexto e leitura facilitada.</p>
+                  </article>
+                </div>
+                <div class="swiper-slide">
+                  <article class="slide-panel">
+                    <span class="mini-label">Tela 03</span>
+                    <h3>Relatórios compartilháveis</h3>
+                    <p>Organize seus dados em formatos claros para acompanhamento médico.</p>
+                  </article>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="depoimentos" class="section-shell testimonials-section">
+      <div class="container">
+        <div class="section-heading text-center mx-auto" data-aos="fade-up">
+          <span class="section-kicker">Depoimentos</span>
+          <h2>Percepções reais de quem transformou o cuidado diário em consistência</h2>
+          <p>Uma experiência que gera segurança visual, facilidade de uso e mais confiança na rotina de saúde.</p>
+        </div>
+
+        <div class="swiper testimonialSwiper mt-5" data-aos="zoom-in">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide h-auto">
+              <article class="testimonial-card glass-card h-100">
+                <div class="testimonial-head">
+                  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cdefs%3E%3ClinearGradient id='g1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2300D1FF'/%3E%3Cstop offset='100%25' stop-color='%237B2EFF'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='120' height='120' rx='60' fill='url(%23g1)'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' fill='%23F5F7FA' font-family='Arial,sans-serif' font-size='40' font-weight='700'%3EMC%3C/text%3E%3C/svg%3E" alt="Avatar de Mariana Costa" loading="lazy">
+                  <div>
+                    <h3>Mariana Costa</h3>
+                    <p>Usuária do app</p>
+                  </div>
+                </div>
+                <div class="stars" aria-label="5 estrelas">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>“Finalmente encontrei um app que parece premium e realmente me ajuda a enxergar minha evolução com clareza.”</p>
+              </article>
+            </div>
+            <div class="swiper-slide h-auto">
+              <article class="testimonial-card glass-card h-100">
+                <div class="testimonial-head">
+                  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cdefs%3E%3ClinearGradient id='g2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%237B2EFF'/%3E%3Cstop offset='100%25' stop-color='%2300FFB2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='120' height='120' rx='60' fill='url(%23g2)'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' fill='%23F5F7FA' font-family='Arial,sans-serif' font-size='40' font-weight='700'%3EFM%3C/text%3E%3C/svg%3E" alt="Avatar de Felipe Moura" loading="lazy">
+                  <div>
+                    <h3>Felipe Moura</h3>
+                    <p>Paciente monitorado</p>
+                  </div>
+                </div>
+                <div class="stars" aria-label="5 estrelas">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>“Os alertas e relatórios mudaram a forma como acompanho minha pressão. Ficou muito mais simples conversar com meu médico.”</p>
+              </article>
+            </div>
+            <div class="swiper-slide h-auto">
+              <article class="testimonial-card glass-card h-100">
+                <div class="testimonial-head">
+                  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cdefs%3E%3ClinearGradient id='g3' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2300FFB2'/%3E%3Cstop offset='100%25' stop-color='%2300D1FF'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='120' height='120' rx='60' fill='url(%23g3)'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' fill='%23070B14' font-family='Arial,sans-serif' font-size='40' font-weight='700'%3ERL%3C/text%3E%3C/svg%3E" alt="Avatar de Renata Lima" loading="lazy">
+                  <div>
+                    <h3>Renata Lima</h3>
+                    <p>Profissional de saúde</p>
+                  </div>
+                </div>
+                <div class="stars" aria-label="5 estrelas">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>“A visualização é muito bem resolvida. Os relatórios chegam claros, organizados e prontos para apoiar a consulta.”</p>
+              </article>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cta-final" class="section-shell final-cta-section">
+      <div class="container position-relative">
+        <div class="final-cta-card glass-card" data-aos="zoom-in-up">
+          <div class="cta-pulse cta-pulse-one"></div>
+          <div class="cta-pulse cta-pulse-two"></div>
+          <span class="section-kicker">Pronto para começar?</span>
+          <h2>Comece hoje mesmo a cuidar melhor da sua saúde.</h2>
+          <p>Baixe o BP Monitor e transforme monitoramento em clareza, prevenção e controle inteligente.</p>
+          <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+            <a href="#" class="btn btn-primary-tech btn-xl ripple">Baixar App</a>
+            <a href="#hero" class="btn btn-outline-tech btn-xl ripple">Voltar ao topo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-shell">
+    <div class="container">
+      <div class="row gy-4 align-items-center">
+        <div class="col-lg-4">
+          <a class="navbar-brand brand-mark justify-content-start" href="#hero">
+            <span class="brand-logo"><i class="bi bi-heart-pulse-fill"></i></span>
+            <span>BP Monitor</span>
+          </a>
+          <p class="footer-copy">Tecnologia, confiança e design premium para acompanhar sua pressão arterial com mais inteligência.</p>
+        </div>
+        <div class="col-lg-5">
+          <div class="footer-links d-flex flex-wrap justify-content-lg-center gap-3 gap-md-4">
+            <a href="#beneficios">Benefícios</a>
+            <a href="#como-funciona">Como funciona</a>
+            <a href="#app">Visual do app</a>
+            <a href="#depoimentos">Depoimentos</a>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="social-links justify-content-lg-end">
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 BP Monitor. Todos os direitos reservados.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // TypeIt.js - Máquina de escrever com frases aleatórias
+    document.addEventListener('DOMContentLoaded', () => {
+      const typewriterElement = document.getElementById('typewriter-badge');
+      if (!typewriterElement || !window.TypeIt) return;
+
+      const phrases = [
+        'Tecnologia cardiovascular para sua rotina',
+        'Monitore sua pressão em tempo real',
+        'Saúde cardiovascular inteligente',
+        'Dados precisos para decisões seguras',
+        'Seu coração merece atenção',
+        'Acompanhamento contínuo e confiável',
+        'Pressão arterial sob controle',
+        'Inteligência cardiovascular ao seu alcance',
+        'Viva com mais confiança e segurança',
+        'Tecnologia que cuida da sua saúde'
+      ];
+
+      let currentPhraseIndex = 0;
+      let typeItInstance = null;
+
+      function startTypeIt() {
+        const phrase = phrases[currentPhraseIndex];
+        typewriterElement.innerHTML = '';
+
+        typeItInstance = new TypeIt(typewriterElement, {
+          strings: phrase,
+          speed: 50,
+          waitUntilVisible: true,
+          afterComplete: () => {
+            setTimeout(() => {
+              currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+              startTypeIt();
+            }, 3000); // Aguarda 3 segundos antes da próxima frase
+          }
+        }).go();
+      }
+
+      // Inicia a animação de typewriter
+      startTypeIt();
+    });
+  </script>
+</body>
+</html>
